@@ -6,27 +6,20 @@ Auto-complete Spotify search as [Contentful UI Extension](https://www.contentful
 ![figure](https://raw.githubusercontent.com/tuunanen/cf-ui-ext-spotify/master/assets/demo.gif "Spotify search Contentful UI Extension demo")
 
 ## Features
+
 * Auto-complete Spotify (track) search
 * Preview for selected Spotify entry in a pop-up window
 * Support for single Spotify entry per Contentful field
 
-## Installation
+### Installation
 
 ```sh
-git clone git@github.com:tuunanen/cf-ui-ext-spotify.git
-cd cf-ui-ext-spotify
-npm install
+yarn
 ```
 
 ### Configure
 
-Create a configuration file with your credentials for Contentful.
-
-```sh
-cp env.example .env
-```
-
-Open `.env` in a editor of your liking and add your Contentful space ID, and management token. [Learn how to obtain a token](https://www.contentful.com/developers/docs/references/authentication/#getting-an-oauth-token).
+Rename `.env.example` to `.env` and add your Contentful space ID and Spotify access token. [Learn how to obtain a token](https://developer.spotify.com/documentation/general/guides/authorization-guide/).
 
 Load environment variables
 
@@ -37,7 +30,8 @@ source .env
 ### Build
 
 ```sh
-npm run build
+yarn run build:dev
+yarn run build:production
 ```
 
 Files processed by the build task will be located under `dist` directory.
@@ -45,7 +39,7 @@ Files processed by the build task will be located under `dist` directory.
 ### Create
 
 ```sh
-npm run create
+yarn run create-extension
 ```
 
 Create task will register the extension in your space on Contentful.
@@ -53,7 +47,7 @@ Create task will register the extension in your space on Contentful.
 ### Update
 
 ```sh
-npm run update
+yarn run update-extension
 ```
 
 Update task will upload the extension to your space on Contentful.
@@ -68,21 +62,21 @@ Update task will upload the extension to your space on Contentful.
 6. Select *Spotify search*
 7. Hit *Save*
 
-## Development
+### Development
 
 ```sh
-npm run dev
+yarn run dev
 ```
 
 Development task starts a development server at [http://localhost:8000](http://localhost:8000), and tells the Contentful App to load the extension from there instead of loading it from the API.
 
 If you now open an entry that uses the extension in your browser it will use the code from your local machine. Please note that **you need to enable insecure content** since the Contentful App is served through HTTPS but your extension is not. Learn how to enable insecure content in [Firefox](https://support.mozilla.org/en-US/kb/mixed-content-blocking-firefox) and [Chrome](https://support.google.com/chrome/answer/1342714).
 
-## Changelog
+### Changelog
 
 Please see [changelog](https://github.com/tuunanen/cf-ui-ext-spotify/blob/master/CHANGELOG.md).
 
-## License
+### License
 
 Copyright &copy; tuunanen
 
