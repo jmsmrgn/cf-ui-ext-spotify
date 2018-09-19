@@ -21,12 +21,6 @@ yarn
 
 Rename `.env.example` to `.env` and add your Contentful space ID and Spotify access token. [Learn how to obtain a token](https://developer.spotify.com/documentation/general/guides/authorization-guide/).
 
-Load environment variables
-
-```sh
-source .env
-```
-
 ### Build
 
 ```sh
